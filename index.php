@@ -17,7 +17,7 @@
 		<h1 class="bg-info text-light p-3">TempFeel</h1>
 		<div class="row mt-1">
 			<div class="col">
-				<table class="table table-sm table-dark">
+				<table class="table table-dark">
 					<thead>
 						<tr>
 							<th scope="col">Temperature</th>
@@ -26,8 +26,8 @@
 					</thead>
 					<tbody>
 						<?php 
-							for($temp = 1; $temp <36; $temp++) {
-								echo "<tr><td>$temp</td><td>".getFeel($temp)."</td></tr>";
+							foreach ($temperatures as $t) {
+								echo "<tr class='". $t['style'] . "'><td>" . $t['value'] .  "</td><td>". $t['feel'] . "</td></tr>";
 							}
 						?>
 					</tbody>
